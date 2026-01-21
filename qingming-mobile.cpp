@@ -1,8 +1,15 @@
 /*
+==================================================================================
+ * QINGMING-ENGINE: High-Performance GPU Vector Search Kernel
+ * Copyright (C) 2024–2026 Xiaolong Zhang. All rights reserved.
  * ==================================================================================
- * QINGMING MOBILE: ENDURANCE TEST V2 (Anti-Optimization)
- * SCENARIO: 10k Clicks, 30ms Interval
- * FIX: Force compiler to execute the loop via volatile checksum
+ *
+ * LICENSE:
+ * Free for personal use, academic research, and organizations with ≤10 employees.
+ * Commercial use in larger organizations or SaaS products requires a license.
+ * See full terms at: https://github.com/uulong950/qingming-flat/LICENSE
+ *
+ * NO WARRANTY — USE AT YOUR OWN RISK.
  * ==================================================================================
  */
 
