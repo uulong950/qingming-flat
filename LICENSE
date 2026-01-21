@@ -1,10 +1,15 @@
 ===============================================================================
-        QINGMING-FLAT LICENSE AGREEMENT (v1.0)
-        青冥引擎许可协议（v1.0）
+        QINGMING-FLAT LICENSE AGREEMENT (v1.1)
+        青冥引擎许可协议（v1.1）
 ===============================================================================
 
 Copyright (C) 2024–2026 Xiaolong Zhang. All rights reserved.
 版权所有 © 2024–2026 张小龙。保留所有权利。
+
+BY USING, COPYING, OR DISTRIBUTING THIS SOFTWARE, YOU AGREE TO BE BOUND BY ALL TERMS OF THIS LICENSE.  
+IF YOU DO NOT AGREE, YOU MUST CEASE ALL USE IMMEDIATELY.
+
+使用、复制或分发本软件即表示您完全接受本协议全部条款。如不同意，请立即停止使用。
 
 ---------------------------------------------------------------------
 1. FREE USE PERMISSION（免费使用许可）
@@ -12,7 +17,7 @@ Copyright (C) 2024–2026 Xiaolong Zhang. All rights reserved.
 
 You are granted a perpetual, worldwide, non-exclusive, royalty-free license to:
 
-(a) Use, modify, and distribute the QINGMING-ENGINE software for:
+(a) Use, modify, and distribute the QINGMING-FLAT software for:
     - Personal learning, academic research, or non-commercial purposes; OR
     - Internal business operations within an organization that has **ten (10) or fewer full-time equivalent (FTE) employees**.
 
@@ -34,47 +39,83 @@ You are granted a perpetual, worldwide, non-exclusive, royalty-free license to:
 The free license above does NOT permit:
 
 - Use by any organization with more than 10 FTE employees;
-- Integration into a product, service, or platform offered to third parties (including SaaS, APIs, or embedded systems);
-- Resale, redistribution as a standalone product, or offering technical support for QINGMING-ENGINE as a commercial service.
+- Integration into a product, service, or platform offered to third parties (including SaaS, APIs, mobile apps, or embedded systems);
+- Resale, redistribution as a standalone product, or offering technical support, hosting, or managed services based on QINGMING-FLAT.
 
-If your use case falls under any of the above, you MUST obtain a separate commercial license from the copyright holder.
+**Any such use constitutes copyright infringement unless authorized under a separate commercial license.**
 
 中文：
 上述免费许可**不包括**以下情形：
 
 - 全职等效员工（FTE）超过 10 人的组织使用；
-- 将本软件集成到面向第三方的产品、服务或平台中（包括 SaaS、API 或嵌入式系统）；
-- 转售、作为独立产品再分发，或以青冥引擎为核心提供商业技术支持服务。
+- 将本软件集成到面向第三方的产品、服务或平台中（包括 SaaS、API、移动应用或嵌入式系统）；
+- 转售、作为独立产品再分发，或基于青冥引擎提供技术支持、托管或托管服务。
 
-如您的使用属于上述任一情况，**必须**从版权所有者处获得单独的商业授权。
+**任何此类使用，若未经单独商业授权，均构成版权侵权。**
 
 ---------------------------------------------------------------------
 3. DEFINITIONS（定义）
 ---------------------------------------------------------------------
 
-"FTE (Full-Time Equivalent)" means the total headcount of employees, contractors, or contributors working ≥20 hours/week for your organization, summed across all departments and subsidiaries.
+"FTE (Full-Time Equivalent)" means the total headcount of employees, contractors, consultants, or contributors who work ≥20 hours per week for your organization, including all subsidiaries, affiliates, and related entities under common control.
 
-"Commercial Use" means any activity that generates revenue, reduces operational cost, or supports a business function beyond internal R&D by a ≤10-person team.
-
-中文：
-“FTE（全职等效）”指贵组织（含子公司）中每周工作 ≥20 小时的员工、合同工或贡献者的总人数。
-
-“商业使用”指任何产生收入、降低运营成本，或支持 ≤10 人团队以外业务功能的活动。
-
----------------------------------------------------------------------
-4. NO WARRANTY（无担保）
----------------------------------------------------------------------
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY.
+"Commercial Use" means any activity that generates revenue, reduces operational cost, supports customer-facing products, or is conducted by an organization exceeding the 10-FTE threshold—even if used internally.
 
 中文：
-本软件按“现状”提供，不附带任何明示或暗示的担保，包括但不限于适销性、特定用途适用性及不侵权担保。在任何情况下，作者均不对任何索赔、损害或其他责任承担责任。
+“FTE（全职等效）”指贵组织（含所有子公司、关联公司及共同控制实体）中每周工作 ≥20 小时的员工、合同工、顾问或贡献者的总人数。
+
+“商业使用”指任何产生收入、降低运营成本、支持面向客户的产品，或由超过 10 人 FTE 门槛的组织所进行的活动——即使仅用于内部。
 
 ---------------------------------------------------------------------
-5. CONTACT & COMMERCIAL LICENSING（联系与商业授权）
+4. NO CIRCUMVENTION（禁止规避）
 ---------------------------------------------------------------------
 
-For commercial licensing, partnership, or compliance questions, please contact:  
+You may not circumvent the 10-FTE limit by:
+- Splitting teams across departments or legal entities;
+- Using subcontractors or shell companies to absorb headcount;
+- Deploying multiple isolated instances to avoid aggregation.
+
+All usage by a parent company and its controlled affiliates is **aggregated** for compliance purposes.
+
+中文：
+您不得通过以下方式规避 10 人 FTE 限制：
+- 将团队拆分至不同部门或法律实体；
+- 使用外包公司或壳公司转移人员统计；
+- 部署多个隔离实例以避免合并计算。
+
+母公司及其控制的关联方的所有使用量将**合并计算**以评估合规性。
+
+---------------------------------------------------------------------
+5. AUDIT RIGHTS & REMEDIES（审计权与违约救济）
+---------------------------------------------------------------------
+
+The copyright holder reserves the right to request, upon written notice, a certification of compliance signed by an authorized officer of your organization.
+
+Unauthorized commercial use beyond the free tier incurs **liquidated damages of USD $50,000 per calendar year**, payable immediately upon discovery. This amount represents a reasonable estimate of lost licensing revenue and is not a penalty.
+
+Willful infringement may result in additional statutory damages and injunctive relief under applicable copyright law.
+
+中文：
+版权所有者有权在书面通知后，要求贵组织授权高管签署**合规证明文件**。
+
+超出免费范围的未经授权商业使用，须支付**每年 50,000 美元（USD $50,000）的追溯授权费**，一经发现立即支付。该金额系对许可收入损失的合理预估，非惩罚性赔偿。
+
+故意侵权可能导致额外的法定赔偿及法院禁令。
+
+---------------------------------------------------------------------
+6. NO WARRANTY（无担保）
+---------------------------------------------------------------------
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE.
+
+中文：
+本软件按“现状”提供，不附带任何明示或暗示的担保，包括但不限于适销性、特定用途适用性及不侵权担保。在任何情况下，作者均不对因合同、侵权或其他原因引起的任何索赔、损害或责任承担责任。
+
+---------------------------------------------------------------------
+7. CONTACT & COMMERCIAL LICENSING（联系与商业授权）
+---------------------------------------------------------------------
+
+For commercial licensing, partnership, or compliance inquiries, please contact:  
 zhangxiaolong950@gmail.com
 
 Official license updates: https://github.com/uulong950/qingming-flat/LICENSE
@@ -83,6 +124,6 @@ Official license updates: https://github.com/uulong950/qingming-flat/LICENSE
 如需商业授权、合作或合规咨询，请联系：  
 zhangxiaolong950@gmail.com
 
-官方许可更新地址：https://github.com/uulong950/qingming-engine/LICENSE
+官方许可更新地址：https://github.com/uulong950/qingming-flat/LICENSE
 
 ===============================================================================
