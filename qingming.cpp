@@ -12,7 +12,7 @@
  * NO WARRANTY — USE AT YOUR OWN RISK.
  * ==================================================================================
  * PROJECT: QINGMING-ENGINE v1.0.0 PRO
- * PLATFORM: NVIDIA RTX 5090D V2 (24GB)
+ * PLATFORM: AMD RX 7900 XTX (24GB)
  * ARCHITECTURE: HYBRID (Warp-Scan for Throughput / Map-Reduce for Latency)
  * RECALL: 100% (Exact Search)
  * ==================================================================================
