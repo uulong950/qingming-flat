@@ -1,25 +1,18 @@
 /*
- * ==================================================================================
+==================================================================================
  * QINGMING-ENGINE: High-Performance GPU Vector Search Kernel
- * Copyright (C) 2024-2026 Xiaolong Zhang. All rights reserved.
+ * Copyright (C) 2024–2026 Xiaolong Zhang. All rights reserved.
  * ==================================================================================
  *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Affero General Public License as
- * published by the Free Software Foundation, either version 3 of the
- * License, or (at your option) any later version.
+ * LICENSE:
+ * Free for personal use, academic research, and organizations with ≤10 employees.
+ * Commercial use in larger organizations or SaaS products requires a license.
+ * See full terms at: https://github.com/uulong950/qingming-flat/LICENSE
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Affero General Public License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>.
- *
+ * NO WARRANTY — USE AT YOUR OWN RISK.
  * ==================================================================================
  * PROJECT: QINGMING-ENGINE v1.0.0 PRO
- * PLATFORM: NVIDIA RTX 5090 D (24GB)
+ * PLATFORM: NVIDIA RTX 5090D V2 (24GB)
  * ARCHITECTURE: HYBRID (Warp-Scan for Throughput / Map-Reduce for Latency)
  * RECALL: 100% (Exact Search)
  * ==================================================================================
