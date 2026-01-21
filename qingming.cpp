@@ -1,12 +1,20 @@
 /*
+==================================================================================
+ * QINGMING-ENGINE: High-Performance GPU Vector Search Kernel
+ * Copyright (C) 2024–2026 Xiaolong Zhang. All rights reserved.
  * ==================================================================================
- * QINGMING-ENGINE: High-Performance GPU Vector Search Kernel (AMD Fusion Edition)
- * Copyright (C) 2024-2026 Xiaolong Zhang. All rights reserved.
+ *
+ * LICENSE:
+ * Free for personal use, academic research, and organizations with ≤10 employees.
+ * Commercial use in larger organizations or SaaS products requires a license.
+ * See full terms at: https://github.com/uulong950/qingming-flat/LICENSE
+ *
+ * NO WARRANTY — USE AT YOUR OWN RISK.
  * ==================================================================================
- * License: GNU Affero General Public License v3 (AGPL-3.0)
- * PLATFORM: AMD Radeon RX 7900 XTX (24GB)
- * ARCHITECTURE: Pure GPU Graph (Map -> Reduce)
- * FIX: GIST-960 Support (Scalar Fallback with Type Casting)
+ * PROJECT: QINGMING-ENGINE v1.0.0 PRO
+ * PLATFORM: NVIDIA RTX 5090D V2 (24GB)
+ * ARCHITECTURE: HYBRID (Warp-Scan for Throughput / Map-Reduce for Latency)
+ * RECALL: 100% (Exact Search)
  * ==================================================================================
  */
 
