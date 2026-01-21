@@ -105,7 +105,54 @@ Latency P999    : 1.875 ms
 =======================================================
 ```
 ## 2.2 AMD 7900 XTX 24G + Ubuntu24.04 + ROCM 6.2
-### 2.2.1 
+### 2.2.1 rocm
+```bash
+/opt/rocm-6.2.4/bin/amdclang++
+```
+### 2.2.2 compile
+```bash
+/opt/rocm-6.2.4/bin/amdclang++ -x hip -O3 --offload-arch=gfx1100 qingming.cpp -o qingming_amd -I/usr/include/hdf5/serial -L/usr/lib/x86_64-linux-gnu/hdf5/serial -lhdf5_cpp -lhdf5
+```
+### 2.2.3 result
+#### 2.2.3.1 SIFT-1M 128 
+```bash
+[BENCH] Running Saturation Test (Batch=10000)...
+[BENCH] Running Latency Test (Graph + GPU Reduce)...
+[BENCH] Validating Recall...
+=======================================================
+QINGMING-ENGINE v1.0.0 PRO [REDMOON]
+PLATFORM: AMD Radeon RX 7900 XTX (24GB)
+Dataset Vectors : 1000000
+Dimension       : 128
+VRAM Usage      : 493.237 MB
+Recall@1        : 99.260 %
+Recall@10       : 100.000 %
+Max Throughput  : 6275.720 QPS
+Latency P50     : 10.572 ms
+Latency P95     : 11.000 ms
+Latency P99     : 11.214 ms
+Latency P999    : 11.500 ms
+```
+#### 2.2.3.2 GIST-10M 96
+```bash
+[BENCH] Running Saturation Test (Batch=1000)...
+[BENCH] Launching Persistent Agent...
+[BENCH] Running Latency Test (Persistent Mode)...
+[BENCH] Validating Recall...
+=======================================================
+QINGMING-ENGINE v1.0.0 PRO [REDMOON]
+PLATFORM: AMD Radeon RX 7900 XTX (24GB)
+Dataset Vectors : 1000000
+Dimension       : 960
+VRAM Usage      : 3698.804 MB
+Recall@1        : 99.400 %
+Recall@10       : 100.000 %
+Max Throughput  : 470.285 QPS
+Latency P50     : 20.087 ms
+Latency P95     : 23.714 ms
+Latency P99     : 25.755 ms
+Latency P999    : 27.237 ms
+```
 ## 2.3 Xiaomi 17 Pro Max 
 ...
 ## 💼 Commercial Licensing / 商业授权
