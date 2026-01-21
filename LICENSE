@@ -1,0 +1,88 @@
+===============================================================================
+        QINGMING-FLAT LICENSE AGREEMENT (v1.0)
+        青冥引擎许可协议（v1.0）
+===============================================================================
+
+Copyright (C) 2024–2026 Xiaolong Zhang. All rights reserved.
+版权所有 © 2024–2026 张小龙。保留所有权利。
+
+---------------------------------------------------------------------
+1. FREE USE PERMISSION（免费使用许可）
+---------------------------------------------------------------------
+
+You are granted a perpetual, worldwide, non-exclusive, royalty-free license to:
+
+(a) Use, modify, and distribute the QINGMING-ENGINE software for:
+    - Personal learning, academic research, or non-commercial purposes; OR
+    - Internal business operations within an organization that has **ten (10) or fewer full-time equivalent (FTE) employees**.
+
+(b) Deploy the software on any number of devices or servers, provided the usage complies with (a).
+
+中文：
+您被授予永久、全球性、非独占、免版税的许可，用于：
+
+(a) 在以下情况下使用、修改和分发青冥引擎软件：
+    - 个人学习、学术研究或非商业用途；或
+    - **全职等效员工（FTE）不超过十（10）人** 的组织内部业务运营。
+
+(b) 只要符合 (a) 条款，可在任意数量的设备或服务器上部署本软件。
+
+---------------------------------------------------------------------
+2. COMMERCIAL USE RESTRICTION（商业使用限制）
+---------------------------------------------------------------------
+
+The free license above does NOT permit:
+
+- Use by any organization with more than 10 FTE employees;
+- Integration into a product, service, or platform offered to third parties (including SaaS, APIs, or embedded systems);
+- Resale, redistribution as a standalone product, or offering technical support for QINGMING-ENGINE as a commercial service.
+
+If your use case falls under any of the above, you MUST obtain a separate commercial license from the copyright holder.
+
+中文：
+上述免费许可**不包括**以下情形：
+
+- 全职等效员工（FTE）超过 10 人的组织使用；
+- 将本软件集成到面向第三方的产品、服务或平台中（包括 SaaS、API 或嵌入式系统）；
+- 转售、作为独立产品再分发，或以青冥引擎为核心提供商业技术支持服务。
+
+如您的使用属于上述任一情况，**必须**从版权所有者处获得单独的商业授权。
+
+---------------------------------------------------------------------
+3. DEFINITIONS（定义）
+---------------------------------------------------------------------
+
+"FTE (Full-Time Equivalent)" means the total headcount of employees, contractors, or contributors working ≥20 hours/week for your organization, summed across all departments and subsidiaries.
+
+"Commercial Use" means any activity that generates revenue, reduces operational cost, or supports a business function beyond internal R&D by a ≤10-person team.
+
+中文：
+“FTE（全职等效）”指贵组织（含子公司）中每周工作 ≥20 小时的员工、合同工或贡献者的总人数。
+
+“商业使用”指任何产生收入、降低运营成本，或支持 ≤10 人团队以外业务功能的活动。
+
+---------------------------------------------------------------------
+4. NO WARRANTY（无担保）
+---------------------------------------------------------------------
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY.
+
+中文：
+本软件按“现状”提供，不附带任何明示或暗示的担保，包括但不限于适销性、特定用途适用性及不侵权担保。在任何情况下，作者均不对任何索赔、损害或其他责任承担责任。
+
+---------------------------------------------------------------------
+5. CONTACT & COMMERCIAL LICENSING（联系与商业授权）
+---------------------------------------------------------------------
+
+For commercial licensing, partnership, or compliance questions, please contact:  
+zhangxiaolong@example.com
+
+Official license updates: https://github.com/uulong950/qingming-flat/LICENSE
+
+中文：
+如需商业授权、合作或合规咨询，请联系：  
+zhangxiaolong950@gmail.com
+
+官方许可更新地址：https://github.com/uulong950/qingming-engine/LICENSE
+
+===============================================================================
