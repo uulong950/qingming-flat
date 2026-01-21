@@ -133,7 +133,7 @@ Latency P95     : 11.000 ms
 Latency P99     : 11.214 ms
 Latency P999    : 11.500 ms
 ```
-#### 2.2.3.2 GIST-10M 96
+#### 2.2.3.2 GIST-1M 960
 ```bash
 [BENCH] Running Saturation Test (Batch=1000)...
 [BENCH] Launching Persistent Agent...
