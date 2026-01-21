@@ -9,6 +9,8 @@ Qingming is a cross-platform, brute-force vector search engine built for the edg
 - qingming.cpp AMD 7900 XTX 24G
 - qingming-mobile.cpp Xiaomi 17 Pro Max
 # 2 快速启动 quickly start
+数据来源 Data Source
+https://github.com/erikbern/ann-benchmarks?tab=readme-ov-file
 ## 2.1 NVIDIA RTX5090D v2 24G + Ubuntu24.04 + cuda
 ### 2.1.1 cuda
 ```bash
