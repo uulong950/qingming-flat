@@ -172,11 +172,13 @@ adb shell /data/local/tmp/qingming_8gen5 100000
 ```
 ### 2.3.3 结果 result
 暴力检索10万条128维向量，单次查询延迟约8毫秒。
+---
 Brute-force search over 100k 128-dim vectors achieves ~8ms latency per query.
-
+---
 连续点击1000次查询，整体功耗增量几乎可忽略不计。
+---
 1000 consecutive tap queries result in negligible additional power consumption overall.
-...
+---
 ## 💼 Commercial Licensing / 商业授权
 
 ### 📱 Qingming-Mobile（适用于 Android、iOS、车机、IoT）  
