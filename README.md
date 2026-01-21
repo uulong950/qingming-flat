@@ -20,7 +20,7 @@ Built on Fri_Feb_21_20:23:50_PST_2025
 Cuda compilation tools, release 12.8, V12.8.93 
 Build cuda_12.8.r12.8/compiler.35583870_0 
 ```
-### 2.1.2 compile
+### 2.1.2 编译 compile
 ```bash
 nvcc -O3 -arch=sm_120 qingming-flat.cu -o flat-hdf5 -I/usr/include/hdf5/serial -L/usr/lib/x86_64-linux-gnu/hdf5/serial -lhdf5_cpp -lhdf5
 
@@ -28,7 +28,7 @@ nvcc -O3 -arch=sm_120 qingming-flat.cu -o flat-hdf5 -I/usr/include/hdf5/serial -
 ./flat-hdf5 ./data/gist-960-euclidean.hdf5
 ./flat-hdf5 ./data/deep-image-96-angular.hdf5
 ```
-### 2.1.3 result
+### 2.1.3 结果 result
 #### 2.1.3.1 SIFT-1M 128
 ```bash
 [INFO] Loading HDF5 Dataset...
@@ -109,11 +109,11 @@ Latency P999    : 1.875 ms
 ```bash
 /opt/rocm-6.2.4/bin/amdclang++
 ```
-### 2.2.2 compile
+### 2.2.2 编译 compile
 ```bash
 /opt/rocm-6.2.4/bin/amdclang++ -x hip -O3 --offload-arch=gfx1100 qingming.cpp -o qingming_amd -I/usr/include/hdf5/serial -L/usr/lib/x86_64-linux-gnu/hdf5/serial -lhdf5_cpp -lhdf5
 ```
-### 2.2.3 result
+### 2.2.3 结果 result
 #### 2.2.3.1 SIFT-1M 128 
 ```bash
 [BENCH] Running Saturation Test (Batch=10000)...
@@ -154,7 +154,7 @@ Latency P99     : 25.755 ms
 Latency P999    : 27.237 ms
 ```
 ## 2.3 Xiaomi 17 Pro Max - Snapdragon 8 Elite Gen 5
-### 2.3.1 compile
+### 2.3.1 编译 compile
 ```bash
 $TOOLCHAIN/aarch64-linux-android34-clang++   
 -O3   
@@ -164,12 +164,18 @@ $TOOLCHAIN/aarch64-linux-android34-clang++
 qingming-mobile.cpp   
 -o qingming_8gen5
 ```
-### 2.3.2 push & exec
+### 2.3.2 推送和执行 push & exec
 ```bash
 adb push qingming_8gen5 /data/local/tmp/
 adb shell chmod +x /data/local/tmp/qingming_8gen5
 adb shell /data/local/tmp/qingming_8gen5 100000
 ```
+### 2.3.3 结果 result
+暴力检索10万条128维向量，单次查询延迟约8毫秒。
+Brute-force search over 100k 128-dim vectors achieves ~8ms latency per query.
+
+连续点击1000次查询，整体功耗增量几乎可忽略不计。
+1000 consecutive tap queries result in negligible additional power consumption overall.
 ...
 ## 💼 Commercial Licensing / 商业授权
 
