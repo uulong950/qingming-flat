@@ -153,7 +153,23 @@ Latency P95     : 23.714 ms
 Latency P99     : 25.755 ms
 Latency P999    : 27.237 ms
 ```
-## 2.3 Xiaomi 17 Pro Max 
+## 2.3 Xiaomi 17 Pro Max - Snapdragon 8 Elite Gen 5
+### 2.3.1 compile
+```bash
+$TOOLCHAIN/aarch64-linux-android34-clang++   
+-O3   
+-static-libstdc++   
+-flto   
+-march=armv8.2-a+fp16+dotprod   
+qingming-mobile.cpp   
+-o qingming_8gen5
+```
+### 2.3.2 push & exec
+```bash
+adb push qingming_8gen5 /data/local/tmp/
+adb shell chmod +x /data/local/tmp/qingming_8gen5
+adb shell /data/local/tmp/qingming_8gen5 100000
+```
 ...
 ## 💼 Commercial Licensing / 商业授权
 
