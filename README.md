@@ -107,3 +107,40 @@ Latency P999    : 1.875 ms
 ## 2.2 AMD 7900 XTX 24G + Ubuntu24.04 + ROCM 6.2
 ### 2.2.1 
 ## 2.3 Xiaomi 17 Pro Max 
+...
+## 💼 Commercial Licensing / 商业授权
+
+### 📱 Qingming-Mobile（适用于 Android、iOS、车机、IoT）  
+*Runs on ARM CPUs with NEON (e.g., Snapdragon, Kirin, MediaTek)*  
+*支持 ARM CPU + NEON 指令集（如高通骁龙、华为麒麟、联发科等）*
+
+- **中国区**：¥9.99 / 设备 / 年 → **3 年后自动转为永久授权**  
+  或 ¥19.99 一次性永久授权  
+- **国际区**：$9.99 / device / year → **converts to perpetual license after 3 years**  
+  or $19.99 one-time perpetual license  
+
+✅ 适用设备包括：智能手机、智能座舱（车机）、IoT 设备、智能摄像头等  
+✅ Includes: smartphones, automotive infotainment systems, IoT devices, smart cameras, etc.
+
+---
+
+### 💻 Qingming-GPU（适用于 NVIDIA / AMD 服务器）  
+*Requires CUDA or HIP-compatible GPU*  
+*需 CUDA 或 HIP 兼容的 GPU*
+
+- **中国区**：¥99 / GPU / 年，或 ¥199 一次性永久授权  
+- **国际区**：$99 / GPU / year, or $199 one-time perpetual license  
+
+---
+
+> 🔹 **Mobile 与 GPU 为两个独立产品线。**  
+> 🔹 **Mobile and GPU are separate products.**  
+>   
+> 若车辆使用的是 `qingming-mobile.cpp`（基于 CPU/NEON），则按 **Mobile 定价**，**不适用 GPU 授权费用**。  
+> A vehicle using `qingming-mobile.cpp` (CPU/NEON-based) is licensed under **Mobile pricing** — **GPU pricing does NOT apply**.
+
+---
+
+### ✉️ 联系我们 / Contact  
+邮箱 / Email: zhangxiaolong950@gmail.com  
+支持批量授权与企业定制方案 / Volume licensing and enterprise agreements available.
