@@ -1,217 +1,182 @@
-# 1 简介
-## 青冥：高性能端侧向量搜索引擎  
-**Qingming: High-Performance On-Device Vector Search**
+# QingMing Engine (青冥)
 
-青冥是一个为边缘计算打造的跨平台暴力向量搜索引擎。  
-Qingming is a cross-platform, brute-force vector search engine built for the edge.
+**High-Performance On-Device Vector Search for the Edge**  
+**高性能端侧暴力向量搜索引擎**
 
-- qingming.cu NVIDIA RTX5090D v2 24G
-- qingming.cpp AMD 7900 XTX 24G
-- qingming-mobile.cpp Xiaomi 17 Pro Max
-# 2 快速启动 quickly start
-数据来源 Data Source
-https://github.com/erikbern/ann-benchmarks?tab=readme-ov-file
-## 2.1 NVIDIA RTX5090D v2 24G + Ubuntu24.04 + cuda
-### 2.1.1 cuda
+---
+
+### 📖 Introduction / 简介
+
+**QingMing (青冥)** is a cross-platform, brute-force vector search engine engineered for the edge. By optimizing for memory bandwidth and cache residency, it achieves exact (or near-exact) recall with zero index construction time.
+
+青冥是一个专为边缘计算打造的跨平台暴力向量搜索引擎。通过极致优化内存带宽和缓存驻留，它在无需构建索引的情况下，实现了全精度的检索效果。
+
+**Supported Architectures / 支持架构:**
+*   **NVIDIA GPU**: `qingming.cu` (Optimized for RTX 5090D / Server GPUs)
+*   **AMD GPU**: `qingming.cpp` (HIP/ROCm for 7900 XTX)
+*   **Mobile NPU/CPU**: `qingming-mobile.cpp` (NEON-accelerated for Snapdragon/Apple Silicon)
+
+**Data Source / 数据来源:**
+[ANN-Benchmarks Datasets](https://github.com/erikbern/ann-benchmarks?tab=readme-ov-file)
+
+---
+
+## 🚀 Quick Start / 快速启动
+
+### 2.1 NVIDIA RTX 5090D v2 (24GB)
+**Environment:** Ubuntu 24.04 + CUDA 12.8
+
+#### Build / 编译
 ```bash
-nvcc: NVIDIA (R) Cuda compiler driver 
-Copyright (c) 2005-2025 NVIDIA Corporation 
-Built on Fri_Feb_21_20:23:50_PST_2025 
-Cuda compilation tools, release 12.8, V12.8.93 
-Build cuda_12.8.r12.8/compiler.35583870_0 
+# Compiler Version: nvcc 12.8.93 (sm_120)
+nvcc -O3 -arch=sm_120 qingming-flat.cu -o flat-hdf5 \
+    -I/usr/include/hdf5/serial -L/usr/lib/x86_64-linux-gnu/hdf5/serial \
+    -lhdf5_cpp -lhdf5
 ```
-### 2.1.2 编译 compile
-```bash
-nvcc -O3 -arch=sm_120 qingming-flat.cu -o flat-hdf5 -I/usr/include/hdf5/serial -L/usr/lib/x86_64-linux-gnu/hdf5/serial -lhdf5_cpp -lhdf5
 
-./flat-hdf5 ./data/sift-128-euclidean.hdf5
-./flat-hdf5 ./data/gist-960-euclidean.hdf5
-./flat-hdf5 ./data/deep-image-96-angular.hdf5
-```
-### 2.1.3 结果 result
-#### 2.1.3.1 SIFT-1M 128
-```bash
-[INFO] Loading HDF5 Dataset...
-[INFO] Warming up GPU pipeline...
-[BENCH] Running Saturation Test (Batch=10000)...
-[BENCH] Running Latency Test (Batch=1, Samples=1000)...
+#### Benchmarks / 性能实测
 
+**1. SIFT-1M (128-dim)**
+> **Result:** 9354 QPS @ ~5.5ms Latency (Batch=10k) | Recall@1: 99.26%
+```text
 =======================================================
    QINGMING-ENGINE v1.0.0 PRO [GPU-FLAT]
    ADAPTER: NVIDIA RTX 5090D v2 (24GB)
 =======================================================
-Dataset Vectors : 1000000
+Dataset Vectors : 1,000,000
 Dimension       : 128
-VRAM Usage      : 497.174 MB
+VRAM Usage      : 497.17 MB
 -------------------------------------------------------
-Recall@1        : 99.260 %
+Recall@1        : 99.260 % (FP32 Precision)
 Recall@10       : 100.000 %
 -------------------------------------------------------
 Max Throughput  : 9354.902 QPS
 Latency P50     : 5.365 ms
-Latency P95     : 5.501 ms
 Latency P99     : 5.573 ms
-Latency P999    : 5.598 ms
 =======================================================
 ```
-#### 2.1.3.2 GIST-1M 960
-```bash
-[INFO] Loading HDF5 Dataset...
-[INFO] Warming up GPU pipeline...
-[BENCH] Running Saturation Test (Batch=1000)...
-[BENCH] Running Latency Test (Batch=1, Samples=1000)...
 
-=======================================================
-   QINGMING-ENGINE v1.0.0 PRO [GPU-FLAT]
-   ADAPTER: NVIDIA RTX 5090D v2 (24GB)
-=======================================================
-Dataset Vectors : 1000000
+**2. GIST-1M (960-dim)**
+> **Result:** High-Dimensional Throughput Test
+```text
+Dataset Vectors : 1,000,000
 Dimension       : 960
-VRAM Usage      : 3702.740 MB
+VRAM Usage      : 3702.74 MB
 -------------------------------------------------------
 Recall@1        : 99.400 %
 Recall@10       : 100.000 %
 -------------------------------------------------------
 Max Throughput  : 621.076 QPS
-Latency P50     : 1.177 ms
-Latency P95     : 1.179 ms
 Latency P99     : 1.186 ms
-Latency P999    : 1.858 ms
 =======================================================
 ```
-#### 2.1.3.3 Deep-10M 96
-```bash
-[INFO] Loading HDF5 Dataset...
-[INFO] Warming up GPU pipeline...
-[BENCH] Running Saturation Test (Batch=10000)...
-[BENCH] Running Latency Test (Batch=1, Samples=1000)...
 
-=======================================================
-   QINGMING-ENGINE v1.0.0 PRO [GPU-FLAT]
-   ADAPTER: NVIDIA RTX 5090D v2 (24GB)
-=======================================================
-Dataset Vectors : 9990000
+**3. Deep-10M (96-dim)**
+> **Result:** 10 Million Vectors Flat Search
+```text
+Dataset Vectors : 9,990,000
 Dimension       : 96
-VRAM Usage      : 3666.119 MB
+VRAM Usage      : 3666.12 MB
 -------------------------------------------------------
 Recall@1        : 99.960 %
 Recall@10       : 99.990 %
 -------------------------------------------------------
 Max Throughput  : 1137.779 QPS
-Latency P50     : 1.185 ms
-Latency P95     : 1.186 ms
 Latency P99     : 1.188 ms
-Latency P999    : 1.875 ms
 =======================================================
 ```
-## 2.2 AMD 7900 XTX 24G + Ubuntu24.04 + ROCM 6.2
-### 2.2.1 rocm
+
+---
+
+### 2.2 AMD Radeon RX 7900 XTX (24GB)
+**Environment:** Ubuntu 24.04 + ROCm 6.2
+
+#### Build / 编译
 ```bash
-/opt/rocm-6.2.4/bin/amdclang++
+/opt/rocm-6.2.4/bin/amdclang++ -x hip -O3 --offload-arch=gfx1100 qingming.cpp -o qingming_amd \
+    -I/usr/include/hdf5/serial -L/usr/lib/x86_64-linux-gnu/hdf5/serial \
+    -lhdf5_cpp -lhdf5
 ```
-### 2.2.2 编译 compile
-```bash
-/opt/rocm-6.2.4/bin/amdclang++ -x hip -O3 --offload-arch=gfx1100 qingming.cpp -o qingming_amd -I/usr/include/hdf5/serial -L/usr/lib/x86_64-linux-gnu/hdf5/serial -lhdf5_cpp -lhdf5
-```
-### 2.2.3 结果 result
-#### 2.2.3.1 SIFT-1M 128 
-```bash
-[BENCH] Running Saturation Test (Batch=10000)...
-[BENCH] Running Latency Test (Graph + GPU Reduce)...
-[BENCH] Validating Recall...
+
+#### Benchmarks / 性能实测
+
+**SIFT-1M (128-dim)**
+```text
 =======================================================
 QINGMING-ENGINE v1.0.0 PRO [REDMOON]
 PLATFORM: AMD Radeon RX 7900 XTX (24GB)
-Dataset Vectors : 1000000
+Dataset Vectors : 1,000,000
 Dimension       : 128
-VRAM Usage      : 493.237 MB
 Recall@1        : 99.260 %
-Recall@10       : 100.000 %
 Max Throughput  : 6275.720 QPS
-Latency P50     : 10.572 ms
-Latency P95     : 11.000 ms
 Latency P99     : 11.214 ms
-Latency P999    : 11.500 ms
-```
-#### 2.2.3.2 GIST-1M 960
-```bash
-[BENCH] Running Saturation Test (Batch=1000)...
-[BENCH] Launching Persistent Agent...
-[BENCH] Running Latency Test (Persistent Mode)...
-[BENCH] Validating Recall...
 =======================================================
-QINGMING-ENGINE v1.0.0 PRO [REDMOON]
-PLATFORM: AMD Radeon RX 7900 XTX (24GB)
-Dataset Vectors : 1000000
+```
+
+**GIST-1M (960-dim)**
+```text
+Dataset Vectors : 1,000,000
 Dimension       : 960
-VRAM Usage      : 3698.804 MB
 Recall@1        : 99.400 %
-Recall@10       : 100.000 %
 Max Throughput  : 470.285 QPS
-Latency P50     : 20.087 ms
-Latency P95     : 23.714 ms
 Latency P99     : 25.755 ms
-Latency P999    : 27.237 ms
+=======================================================
 ```
-## 2.3 Xiaomi 17 Pro Max - Snapdragon 8 Elite Gen 5
-### 2.3.1 编译 compile
+
+---
+
+### 2.3 Mobile: Xiaomi 17 Pro Max (Snapdragon 8 Gen 5)
+**Core Tech:** NEON SIMD + L3 Cache Residency (Zero-Copy)
+
+#### Build / 编译
 ```bash
-$TOOLCHAIN/aarch64-linux-android34-clang++   
--O3   
--static-libstdc++   
--flto   
--march=armv8.2-a+fp16+dotprod   
-qingming-mobile.cpp   
--o qingming_8gen5
+$TOOLCHAIN/aarch64-linux-android34-clang++ -O3 -static-libstdc++ -flto \
+    -march=armv8.2-a+fp16+dotprod qingming-mobile.cpp -o qingming_8gen5
 ```
-### 2.3.2 推送和执行 push & exec
+
+#### Deployment / 部署
 ```bash
 adb push qingming_8gen5 /data/local/tmp/
 adb shell chmod +x /data/local/tmp/qingming_8gen5
 adb shell /data/local/tmp/qingming_8gen5 100000
 ```
-### 2.3.3 结果 result
-暴力检索10万条128维向量，单次查询延迟约8毫秒。
----
-Brute-force search over 100k 128-dim vectors achieves ~8ms latency per query.
----
-连续点击1000次查询，整体功耗增量几乎可忽略不计。
----
-1000 consecutive tap queries result in negligible additional power consumption overall.
----
-## 💼 Commercial Licensing / 商业授权
 
-### 📱 Qingming-Mobile（适用于 Android、iOS、车机、IoT）  
-*Runs on ARM CPUs with NEON (e.g., Snapdragon, Kirin, MediaTek)*  
-*支持 ARM CPU + NEON 指令集（如高通骁龙、华为麒麟、联发科等）*
-
-- **中国区**：¥9.99 / 设备 / 年 → **3 年后自动转为永久授权**  
-  或 ¥19.99 一次性永久授权  
-- **国际区**：$9.99 / device / year → **converts to perpetual license after 3 years**  
-  or $19.99 one-time perpetual license  
-
-✅ 适用设备包括：智能手机、智能座舱（车机）、IoT 设备、智能摄像头等  
-✅ Includes: smartphones, automotive infotainment systems, IoT devices, smart cameras, etc.
+#### Performance / 性能表现
+> **Latency:** Brute-force search over **100k 128-dim vectors** achieves **~8ms** latency per query.  
+> **Power:** 1000 consecutive queries resulted in **negligible thermal increase**.
 
 ---
 
-### 💻 Qingming-GPU（适用于 NVIDIA / AMD 服务器）  
-*Requires CUDA or HIP-compatible GPU*  
-*需 CUDA 或 HIP 兼容的 GPU*
+## 💼 Licensing & Enterprise Support / 商业授权
 
-- **中国区**：¥99 / GPU / 年，或 ¥199 一次性永久授权  
-- **国际区**：$99 / GPU / year, or $199 one-time perpetual license  
+QingMing Engine offers a dual-licensing model optimized for Edge and Server deployments.
+青冥引擎提供针对边缘端和服务器端的双轨授权模式。
+
+### 📱 QingMing-Mobile
+**Target:** Android, iOS, Automotive (Smart Cockpit), IoT, Smart Cameras.  
+**Tech:** ARM CPU + NEON Optimization.
+
+| Region | Pricing Strategy | Terms |
+| :--- | :--- | :--- |
+| **Global** | **$9.99** / device / year | Converts to **perpetual license** after 3 years. <br>Or **$19.99** one-time perpetual. |
+| **China** | **¥9.99** / 设备 / 年 | 3 年后自动转为永久授权。<br>或 **¥19.99** 一次性永久授权。 |
+
+### 💻 QingMing-GPU
+**Target:** NVIDIA / AMD Servers, Workstations.  
+**Tech:** CUDA / HIP.
+
+| Region | Pricing Strategy | Terms |
+| :--- | :--- | :--- |
+| **Global** | **$99** / GPU / year | Or **$199** one-time perpetual. |
+| **China** | **¥99** / GPU / 年 | 或 **¥199** 一次性永久授权。 |
+
+> **Note:** Vehicles/IoT devices using the CPU-based `qingming-mobile.cpp` fall under **Mobile Pricing**, even if a GPU is present.
 
 ---
 
-> 🔹 **Mobile 与 GPU 为两个独立产品线。**  
-> 🔹 **Mobile and GPU are separate products.**  
->   
-> 若车辆使用的是 `qingming-mobile.cpp`（基于 CPU/NEON），则按 **Mobile 定价**，**不适用 GPU 授权费用**。  
-> A vehicle using `qingming-mobile.cpp` (CPU/NEON-based) is licensed under **Mobile pricing** — **GPU pricing does NOT apply**.
+### ✉️ Contact / 联系我们
 
----
+**Email:** zhangxiaolong950@gmail.com
 
-### ✉️ 联系我们 / Contact  
-邮箱 / Email: zhangxiaolong950@gmail.com  
-支持批量授权与企业定制方案 / Volume licensing and enterprise agreements available.
+*Volume licensing, source code access, and custom enterprise integration available upon request.*  
+*支持批量授权、源码交付与企业级定制方案。*
